@@ -12,8 +12,8 @@ COPY . .
 
 # Installing dependencies
 RUN pip install -r requirements.txt
-
-CMD python manage.py runserver 0.0.0.0:80
+RUN chmod +x run_local.sh
+CMD ./run_local.sh
 
 # Django service port
 EXPOSE 80
