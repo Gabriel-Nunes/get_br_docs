@@ -1,1 +1,0 @@
-web: gunicorn get-br-docs.wsgi
