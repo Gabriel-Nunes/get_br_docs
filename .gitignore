@@ -11,8 +11,6 @@ secret_key.txt
 __pycache__
 db.sqlite3
 media
-books/migrations
-authentication/migrations
 
 # Backup files # 
 *.bak
