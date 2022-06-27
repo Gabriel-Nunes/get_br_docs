@@ -8,4 +8,4 @@ class TextSerializer(serializers.ModelSerializer):
     ceps = serializers.CharField(read_only=True)
     class Meta:
         model = Text
-        fields = ['text', 'cpfs', 'cnpjs', 'ceps']
+        fields = ['id', 'text', 'cpfs', 'cnpjs', 'ceps']
