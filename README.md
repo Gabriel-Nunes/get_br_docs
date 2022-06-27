@@ -2,6 +2,8 @@
 
 #### This Rest API fetch main brazilian personal documents in texts.
 
+Check it out at https://get-brazilian-docs.herokuapp.com/.
+
 ### Technologies:
 
 - Python
