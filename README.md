@@ -19,7 +19,7 @@ Currently search for 3 kinds of brazilian documents:
 2. CNPJ - companies unique ID.
 3. CEP  - brazilian zip code.
 
-Official documents algorithms validation are applied (thanks to [validate-docbr]([https://](https://github.com/alvarofpp/validate-docbr)) lib).
+Official documents algorithms validation are applied (thanks to [validate-docbr](https://github.com/alvarofpp/validate-docbr) lib).
 
 ![is](Screenshot.png)
 
