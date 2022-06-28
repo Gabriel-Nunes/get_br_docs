@@ -1,1 +1,1 @@
-web: gunicorn get_br_docs.wsgi
+web: gunicorn config.wsgi
