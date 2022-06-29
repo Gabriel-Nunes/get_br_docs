@@ -132,9 +132,10 @@ def find_cnpj(text: str) -> list:
     Returns a list with brazilian unique company ID (CNPJ)
     finded in a string.
     """
-    regexCPF = re.compile(r"\b\d{14}\b|\b\d\d.\d\d\d.\d\d\d\/\d\d\d\d-\d\d\b")
+    # regexCNPJ = re.compile(r"\D\d{14}\D|\D\d\d.\d\d\d.\d\d\d\/\d\d\d\d-\d\d\D")
+    regexCNPJ = re.compile(r"([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})")
     cnpjs = set(
-        ["".join([num for num in x if num.isalnum()]) for x in regexCPF.findall(text)]
+        ["".join([num for num in x if num.isalnum()]) for x in regexCNPJ.findall(text)]
     )
     valid_cnpjs = []
     for cnpj in cnpjs:
