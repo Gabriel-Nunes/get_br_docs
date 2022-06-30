@@ -19,4 +19,5 @@ class TextList(generics.ListCreateAPIView):
         res = {'cpfs_found': cpfs,
                 'cnpjs_found': cnpjs,
                 'ceps_found': ceps}
+        # serializer.data.update(res)
         return Response(res, status=status.HTTP_200_OK, headers=headers)
