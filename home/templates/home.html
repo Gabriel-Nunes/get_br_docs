@@ -80,6 +80,24 @@
                     </table>
             </div>
         </div>
+        <div class="col">
+            <div class="col mb-3">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">VEÍCULOS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for plate in plates_found %}
+                            <tr>
+                                <td>{{ plate }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+        </div>
     </div>
 </div>
 <br>
@@ -88,7 +106,8 @@
     <div class="row">
         <div class="col">
             <div class="col mb-3">
-                <a class="btn btn-primary" href="">Exportar para excel</a>
+                
+                <a class="btn btn-primary" href="{{ excel_file_url }}">Exportar para excel</a>
             </div>
         </div>
     </div>

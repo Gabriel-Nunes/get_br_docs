@@ -1,7 +1,7 @@
 from get_docs.models import Text
 from get_docs.serializers import TextSerializer
 from rest_framework import generics, status
-from get_docs.utils import find_cpf, find_cnpj, find_cep
+from get_docs.utils import find_cpf, find_cnpj, find_cep, find_vehicles
 from rest_framework.response import Response
 
 
@@ -16,7 +16,9 @@ class GetData(generics.ListCreateAPIView):
         cpfs = find_cpf(text)
         cnpjs = find_cnpj(text)
         ceps = find_cep(text)
+        plates = find_vehicles(text)
         res = {'cpfs_found': cpfs,
                 'cnpjs_found': cnpjs,
-                'ceps_found': ceps}
+                'ceps_found': ceps,
+                'plates_found': plates,}
         return Response(res, status=status.HTTP_200_OK, headers=headers)
