@@ -17,6 +17,9 @@ class Home(View):
         session = requests.session()
         resp = session.post(END_POINT, data={'text': text})
         data = resp.json()
-        print(data.get('cpfs_found'))
+       
+        return render(request, 'home.html', context=data)
 
-        return render(request, 'home.html', context={'cpfs': data.get('cpfs_found')})
+
+class ExportExcel(View):
+    pass
