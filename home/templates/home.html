@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block 'title' %}Extrair entidades{% endblock 'title' %}
+
+{% block 'head' %}{% endblock 'head' %}
+
+{% block 'body' %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="col mb-3">
+                    <legend>Insira o texto:</legend>
+                    <form action="{% url 'home' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                        <textarea class="form-control" name="text"  cols="30" rows="10"></textarea>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Extrair entidades</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for cpf in data.cpfs_found %}
+        {{ cpf }}
+    {% endfor %}
+    </div>
+    
+
+{% endblock 'body' %}

@@ -3,7 +3,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('get_docs.urls'))
+    path('', include('get_docs.urls')),
+    path('home/', include('home.urls')),
 ]
 
 from django.conf import settings
