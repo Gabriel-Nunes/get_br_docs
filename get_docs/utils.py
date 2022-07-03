@@ -133,6 +133,12 @@ def find_cpf(text: str) -> list:
             valid_cpfs.append(cpf)
     return unique_values(valid_cpfs)
 
+def find_vehicles(text: str) -> list:
+    """
+    Returns a list of brazilian vehicles plates.
+    """
+    plates = re.findall(r"\b([A-Za-z]{3}[\s-]?[0-9][0-9A-Za-z][0-9]{2})\b", text)
+    return unique_values([clean_doc_num(p) for p in plates])
 
 def find_cnpj(text: str) -> list:
     """
