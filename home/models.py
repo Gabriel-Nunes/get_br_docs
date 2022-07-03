@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class ExcelFile(models.Model):
+    file = models.FileField(blank=True)
+    file_path = models.FilePathField(blank=True)
+    url = models.URLField(blank=True)
