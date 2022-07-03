@@ -5,6 +5,13 @@ import pandas as pd
 from unicodedata import normalize
 
 
+def unique_values(values: list) -> list:
+    """
+    Filter duplicated values in a given list.
+    """
+    unique_values = set(values)
+    return list(unique_values)
+
 def clean_doc_num(cpf: str) -> str:
     """
     Filter non alphanumeric charcters from a document
@@ -96,8 +103,8 @@ def find_cep(text: str) -> list:
     Returns a list of brazilian zip code (CEP)
     finded in a given string.
     """
-    cep = re.findall(r"\D(\d\d\d\d\d-\d\d\d)\D", text)
-    return [clean_doc_num(c) for c in cep]
+    cep = re.findall(r"\b(\d\d\d\d\d-?\d\d\d)\b", text)
+    return unique_values([clean_doc_num(c) for c in cep])
 
 
 def lefted_zeros(lenght: int, num: str):
@@ -124,7 +131,7 @@ def find_cpf(text: str) -> list:
         cpf_num = CPF()
         if cpf_num.validate(cpf):
             valid_cpfs.append(cpf)
-    return valid_cpfs
+    return unique_values(valid_cpfs)
 
 
 def find_cnpj(text: str) -> list:
@@ -132,7 +139,7 @@ def find_cnpj(text: str) -> list:
     Returns a list with brazilian unique company ID (CNPJ)
     finded in a string.
     """
-    regexCNPJ = re.compile(r"\D\d{14}\D|\D\d\d.\d\d\d.\d\d\d\/\d\d\d\d-\d\d\D")
+    regexCNPJ = re.compile(r"\b\d{14}\b|\b\d\d.\d\d\d.\d\d\d\/\d\d\d\d-\d\d\b")
     # regexCNPJ = re.compile(r"([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})")
     cnpjs = set(
         ["".join([num for num in x if num.isalnum()]) for x in regexCNPJ.findall(text)]
@@ -142,7 +149,7 @@ def find_cnpj(text: str) -> list:
         cnpj_num = CNPJ()
         if cnpj_num.validate(cnpj):
             valid_cnpjs.append(cnpj)
-    return valid_cnpjs
+    return unique_values(valid_cnpjs)
 
 
 def to_table(file_path: str):
