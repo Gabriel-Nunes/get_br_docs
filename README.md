@@ -2,7 +2,7 @@
 
 #### This Rest API fetch main brazilian personal documents in texts.
 
-Check it out at https://get-brazilian-docs.herokuapp.com/get_docs/.
+Check it out at https://get-brazilian-docs.herokuapp.com/get_data/.
 
 ### Technologies:
 
@@ -18,10 +18,15 @@ Currently search for 3 kinds of brazilian documents:
 1. CPF  - citizen unique ID.
 2. CNPJ - companies unique ID.
 3. CEP  - brazilian zip code.
+4. CARS - brazilian (and Mercosul) car plates.
 
 Official documents algorithms validation are applied (thanks to [validate-docbr](https://github.com/alvarofpp/validate-docbr) lib).
 
 ![is](Screenshot.png)
+
+Also include a Home page to get the text data and export to an Excel file.
+
+![alt](home.png)
 
 ### Requirements:
 

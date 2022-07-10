@@ -10,9 +10,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://get-brazilian-docs.herokuapp.com"]
+# SECRET KEY
+try:
+    # SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY='django-insecure-*(x+$#1urt*9^b+en_k(#el9d@&n7ary25^2x5k_()h%y)!ne2'
+except KeyError as e:
+    raise RuntimeError("Could not find a SECRET_KEY in environment") from e
+
+if DEBUG:
+    ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "http://get-br-docs.com.br"]
+else:
+    ALLOWED_HOSTS = ["https://get-brazilian-docs.herokuapp.com"]
 
 # Application definition
 
