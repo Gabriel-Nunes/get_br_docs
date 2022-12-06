@@ -1,6 +1,6 @@
-# Get brazilian docs
+# Get Brazilian docs
 
-#### This Rest API fetch main brazilian personal documents in texts.
+#### This Rest API fetch main Brazilian personal documents in texts.
 
 Check it out at https://get-brazilian-docs.herokuapp.com/get_data/.
 
@@ -13,12 +13,12 @@ Check it out at https://get-brazilian-docs.herokuapp.com/get_data/.
 
 ### Highlights:
 
-Currently search for 3 kinds of brazilian documents:
+Currently, search for 3 kinds of Brazilian documents:
 
 1. CPF  - citizen unique ID.
 2. CNPJ - companies unique ID.
-3. CEP  - brazilian zip code.
-4. CARS - brazilian (and Mercosul) car plates.
+3. CEP  - Brazilian zip code.
+4. CARS - Brazilian (and Mercosul) car plates.
 
 Official documents algorithms validation are applied (thanks to [validate-docbr](https://github.com/alvarofpp/validate-docbr) lib).
 
@@ -33,7 +33,7 @@ Also include a Home page to get the text data and export to an Excel file.
     - Python 3+
     - Docker
   
-### Instalation:
+### Installation:
 
     git clone https://github.com/Gabriel-Nunes/get_br_docs.git
     cd get_br_docs
