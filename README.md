@@ -20,7 +20,7 @@ Currently, search for 3 kinds of Brazilian documents:
 3. CEP  - Brazilian zip code.
 4. CARS - Brazilian (and Mercosul) car plates.
 
-Official documents algorithms validation are applied (thanks to [validate-docbr](https://github.com/alvarofpp/validate-docbr) lib).
+Official documents algorithms of validation are applied (thanks to [validate-docbr](https://github.com/alvarofpp/validate-docbr) lib).
 
 ![is](Screenshot.png)
 
