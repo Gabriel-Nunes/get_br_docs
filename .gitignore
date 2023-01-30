@@ -201,6 +201,7 @@ cython_debug/
 # Jupyter Notebook
 
 # IPython
+*.ipynb
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -279,6 +280,7 @@ pip-selfcheck.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+.vscode
 
 # Local History for Visual Studio Code
 .history/

@@ -1,5 +1,8 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -14,8 +17,7 @@ DEBUG = True
 
 # SECRET KEY
 try:
-    # SECRET_KEY = os.environ.get('SECRET_KEY')
-    SECRET_KEY='django-insecure-*(x+$#1urt*9^b+en_k(#el9d@&n7ary25^2x5k_()h%y)!ne2'
+    SECRET_KEY = os.getenv('SECRET_KEY')
 except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
@@ -129,6 +131,3 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Heroku config
-import django_on_heroku
-django_on_heroku.settings(locals())

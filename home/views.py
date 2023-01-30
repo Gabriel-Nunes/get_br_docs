@@ -8,10 +8,7 @@ from datetime import datetime
 from home.models import ExcelFile
 
 
-if settings.DEBUG:
-    END_POINT = 'http://127.0.0.1:8000/get_data/'
-else:
-    END_POINT = 'https://get-brazilian-docs.herokuapp.com/get_data/'
+END_POINT = 'http://127.0.0.1:8000/get_data/'
 
 
 class Home(View):
