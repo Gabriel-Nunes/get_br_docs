@@ -38,4 +38,4 @@ Also include a Home page to get the text data and export to an Excel file.
     git clone https://github.com/Gabriel-Nunes/get_br_docs.git
     cd get_br_docs
     docker build -t get_docs .
-    docker run -p 8000:80 get_docs
+    docker run -p 8000:8000 get_docs

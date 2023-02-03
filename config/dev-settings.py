@@ -24,7 +24,7 @@ except KeyError as e:
 if DEBUG:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = ["https://get-brazilian-docs.herokuapp.com"]
+    ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

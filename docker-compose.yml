@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: .
+    # command: gunicorn --bind 0.0.0.0:8000 config.wsgi --workers=4
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - django-network
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+    networks:
+      - django-network
+networks:
+  django-network:
+    name: django-network
+volumes:
+  media_volume:
+  static_volume:

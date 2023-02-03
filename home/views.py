@@ -8,7 +8,7 @@ from datetime import datetime
 from home.models import ExcelFile
 
 
-END_POINT = 'http://127.0.0.1:8000/get_data/'
+END_POINT = 'http://0.0.0.0:8000/get_data/'
 
 
 class Home(View):

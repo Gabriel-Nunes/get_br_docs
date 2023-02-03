@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 # SECRET KEY
 try:
@@ -22,9 +22,9 @@ except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
 if DEBUG:
-    ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "http://get-br-docs.com.br"]
+    ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = ["https://get-brazilian-docs.herokuapp.com"]
+    ALLOWED_HOSTS = ["*"]  # Change in production
 
 # Application definition
 
@@ -121,7 +121,7 @@ DISABLE_COLLECTSTATIC=0
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
 # STATIC_ROOT = BASE_DIR / "staticfiles"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
